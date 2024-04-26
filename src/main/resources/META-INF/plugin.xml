@@ -67,7 +67,6 @@
         <projectService serviceImplementation="org.infernus.idea.checkstyle.util.ProjectFilePaths"/>
         <projectService serviceImplementation="org.infernus.idea.checkstyle.ConfigurationInvalidator"/>
 
-        <postStartupActivity implementation="org.infernus.idea.checkstyle.startup.NotifyUserIfPluginUpdated"/>
         <postStartupActivity implementation="org.infernus.idea.checkstyle.startup.DisableCheckstyleLogging"/>
 
         <projectConfigurable instance="org.infernus.idea.checkstyle.CheckStyleConfigurable" parentId="tools"/>

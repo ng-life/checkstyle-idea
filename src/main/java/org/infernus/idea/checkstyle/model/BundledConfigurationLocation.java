@@ -43,7 +43,7 @@ public class BundledConfigurationLocation extends ConfigurationLocation {
     @NotNull
     protected InputStream resolveFile(@NotNull final ClassLoader checkstyleClassLoader) throws IOException {
         try {
-            InputStream source = checkstyleClassLoader.loadClass("com.puppycrawl.tools.checkstyle.Checker").getResourceAsStream(bundledConfig.getPath());
+            InputStream source = checkstyleClassLoader.loadClass("org.infernus.idea.checkstyle.csapi.BundledConfig").getResourceAsStream(bundledConfig.getPath());
             if (source == null) {
                 throw new IOException("Could not read " + bundledConfig.getPath() + " from classpath");
             }

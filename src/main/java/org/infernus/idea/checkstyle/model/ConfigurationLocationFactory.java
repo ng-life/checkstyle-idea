@@ -70,7 +70,7 @@ public class ConfigurationLocationFactory {
                 break;
 
             case LEGACY_CLASSPATH:
-                return create(BundledConfig.SUN_CHECKS, project); // backwards compatibility with old config files
+                return create(BundledConfig.ORDERCENTER_CHECKS, project); // backwards compatibility with old config files
 
             default:
                 throw new IllegalArgumentException("Unknown type: " + type);

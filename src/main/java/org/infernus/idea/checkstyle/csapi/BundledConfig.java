@@ -17,11 +17,8 @@ public final class BundledConfig {
 
     private static final String BUNDLED_LOCATION = "(bundled)";
 
-    /** the Sun checks */
-    public static final BundledConfig SUN_CHECKS = new BundledConfig(0, "bundled-sun-checks", "Sun Checks", "/sun_checks.xml");
-
     /** the Google checks */
-    public static final BundledConfig GOOGLE_CHECKS = new BundledConfig(1, "bundled-google-checks", "Google Checks", "/google_checks.xml");
+    public static final BundledConfig ORDERCENTER_CHECKS = new BundledConfig(0, "bundled-ordercenter-checks", "OrderCenter Checks", "/ordercenter_checks.xml");
 
     private final int sortOrder;
     private final String id;
@@ -82,22 +79,17 @@ public final class BundledConfig {
 
     @NotNull
     public static BundledConfig fromDescription(@NotNull final String pDescription) {
-        BundledConfig result = GOOGLE_CHECKS;
-        if (pDescription.contains("Sun")) {
-            result = SUN_CHECKS;
-        }
-        return result;
+        return ORDERCENTER_CHECKS;
     }
 
     public static BundledConfig getDefault() {
-        return SUN_CHECKS;
+        return ORDERCENTER_CHECKS;
     }
 
     public static Collection<BundledConfig> getAllBundledConfigs() {
         Map<String, BundledConfig> map = new HashMap<>();
 
-        map.put(SUN_CHECKS.getId(), SUN_CHECKS);
-        map.put(GOOGLE_CHECKS.getId(), GOOGLE_CHECKS);
+        map.put(ORDERCENTER_CHECKS.getId(), ORDERCENTER_CHECKS);
 
         LOG.debug("Loading additional BundledConfigs");
 

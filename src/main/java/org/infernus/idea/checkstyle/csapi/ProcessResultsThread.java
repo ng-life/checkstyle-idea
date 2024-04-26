@@ -126,7 +126,7 @@ public class ProcessResultsThread implements ThrowableRunnable<RuntimeException>
         if (victim != null) {
             addProblemTo(victim, psiFile, event, position.afterEndOfLine);
         } else {
-            addProblemTo(psiFile, psiFile, event, false);
+//            addProblemTo(psiFile, psiFile, event, false);
             LOG.debug("Couldn't find victim for error: " + event.fileName + "(" + event.lineNumber + ":"
                     + event.columnNumber + ") " + event.message);
         }
